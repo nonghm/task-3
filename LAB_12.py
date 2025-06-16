@@ -1,3 +1,4 @@
+#Lab: Blind SQL injection with conditional errors
 import requests
 from bs4 import BeautifulSoup
 

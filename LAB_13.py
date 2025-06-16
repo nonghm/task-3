@@ -1,3 +1,4 @@
+#Lab: Visible error-based SQL injection
 import requests
 import re
 from bs4 import BeautifulSoup

@@ -1,3 +1,4 @@
+#Lab: Blind SQL injection with time delays
 import requests
 import time
 

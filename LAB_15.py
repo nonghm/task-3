@@ -1,3 +1,4 @@
+#Lab: Blind SQL injection with time delays and information retrieval
 import requests
 import time
 from bs4 import BeautifulSoup
