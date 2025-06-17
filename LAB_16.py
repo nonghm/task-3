@@ -1,7 +1,7 @@
 #Lab: Blind SQL injection with out-of-band interaction
 import requests
 
-print("Nhập URL lab giống như này: https://<your-lab-id>.web-security-academy.net/")
+print("Nhập URL giống như này (pls): https://(your-lab-id).web-security-academy.net/ ")
 base_url = input("Nhập URL: ").rstrip("/")
 
 collab_domain = input("Nhập domain Burp Collaborator (ví dụ abcdef.burpcollaborator.net): ").strip()
